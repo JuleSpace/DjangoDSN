@@ -1,0 +1,54 @@
++---------------------+
+|      Enseignant     |
++---------------------+
+| - id                |
+| - nom               |
+| - prenom            |
++---------------------+
+| + ajouter()         |
+| + supprimer()       |
++---------------------+
+
++---------------------+
+|       Salle         |
++---------------------+
+| - id                |
+| - numero            |
++---------------------+
+| + ajouter()         |
+| + supprimer()       |
++---------------------+
+
++---------------------+
+|      Materiel       |
++---------------------+
+| - id                |
+| - nom               |
+| - type              |
+| - budget            |
+| - responsable       |
+| - localisation      |
+| - possesseur        |
+| - accessoires       |
++---------------------+
+| + ajouter()         |
+| + supprimer()       |
+| + changerPossesseur()|
+| + localiser()       |
++---------------------+
+
++---------------------+
+|    Historique       |
++---------------------+
+| - id                |
+| - materiel          |
+| - ancienPossesseur  |
+| - nouveauPossesseur |
+| - date              |
+| - lieu              |
+| - occasion          |
+| - etatAccessoires   |
++---------------------+
+| + ajouter()         |
+| + supprimer()       |
++---------------------+

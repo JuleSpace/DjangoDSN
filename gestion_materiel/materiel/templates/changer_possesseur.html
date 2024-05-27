@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Changer le Possesseur</title>
+</head>
+<body>
+    <h1>Changer le Possesseur de {{ materiel.nom }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Changer</button>
+    </form>
+</body>
+</html>
