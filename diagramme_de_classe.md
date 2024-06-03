@@ -1,51 +1,56 @@
+# Diagramme de Classe
+
+Voici le diagramme de classe pour l'application de gestion de matériel :
+
+```mermaid
 classDiagram
     class Enseignant {
-        - id: Integer
-        - nom: String
-        - prenom: String
-        + ajouter(): void
-        + supprimer(): void
+        int id
+        String nom
+        String prenom
+        void ajouter()
+        void supprimer()
     }
 
     class Salle {
-        - id: Integer
-        - numero: String
-        + ajouter(): void
-        + supprimer(): void
+        int id
+        String numero
+        void ajouter()
+        void supprimer()
     }
 
     class Materiel {
-        - id: Integer
-        - nom: String
-        - type: String
-        - budget: String
-        - responsable: Enseignant
-        - localisation: Salle
-        - possesseur: Enseignant
-        - accessoires: String
-        + ajouter(): void
-        + supprimer(): void
-        + changerPossesseur(nouveauPossesseur: Enseignant, nouvelleSalle: Salle): void
-        + localiser(): Salle
+        int id
+        String nom
+        String type
+        String budget
+        Enseignant responsable
+        Salle localisation
+        Enseignant possesseur
+        String accessoires
+        void ajouter()
+        void supprimer()
+        void changerPossesseur(Enseignant nouveauPossesseur, Salle nouvelleSalle)
+        Salle localiser()
     }
 
     class Historique {
-        - id: Integer
-        - materiel: Materiel
-        - ancienPossesseur: Enseignant
-        - nouveauPossesseur: Enseignant
-        - date: Date
-        - lieu: Salle
-        - occasion: String
-        - etatAccessoires: String
-        + ajouter(): void
-        + supprimer(): void
+        int id
+        Materiel materiel
+        Enseignant ancienPossesseur
+        Enseignant nouveauPossesseur
+        Date date
+        Salle lieu
+        String occasion
+        String etatAccessoires
+        void ajouter()
+        void supprimer()
     }
 
-    Enseignant "1" <-- "0..*" Materiel : responsable
-    Enseignant "1" <-- "0..*" Materiel : possesseur
-    Salle "1" <-- "0..*" Materiel : localisation
-    Materiel "1" <-- "0..*" Historique : materiel
-    Enseignant "1" <-- "0..*" Historique : ancienPossesseur
-    Enseignant "1" <-- "0..*" Historique : nouveauPossesseur
-    Salle "1" <-- "0..*" Historique : lieu
+    Enseignant "1" --> "0..*" Materiel : responsable
+    Enseignant "1" --> "0..*" Materiel : possesseur
+    Salle "1" --> "0..*" Materiel : localisation
+    Materiel "1" --> "0..*" Historique : materiel
+    Enseignant "1" --> "0..*" Historique : ancienPossesseur
+    Enseignant "1" --> "0..*" Historique : nouveauPossesseur
+    Salle "1" --> "0..*" Historique : lieu
