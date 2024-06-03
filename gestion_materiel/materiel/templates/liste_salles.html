@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Salles</title>
+</head>
+<body>
+    <h1>Liste des Salles avec du Matériel</h1>
+    <ul>
+        {% for salle in salles %}
+        <li>
+            <a href="{% url 'materiels_par_salle' salle.id %}">Salle {{ salle.numero }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

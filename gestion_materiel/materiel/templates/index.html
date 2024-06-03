@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestion de Matériel</title>
+</head>
+<body>
+    <h1>Bienvenue dans l'application de gestion de matériel</h1>
+    <h2>Fonctionnalités</h2>
+    <ul>
+        <li><a href="{% url 'admin:index' %}">Administration</a></li>
+        <li><a href="{% url 'ajouter_enseignant' %}">Ajouter un Enseignant</a></li>
+        <li><a href="{% url 'ajouter_materiel' %}">Ajouter un Matériel</a></li>
+        <li><a href="{% url 'materiels_par_salle' %}">Voir les Matériels par Salle</a></li>
+        <li><a href="{% url 'materiels_par_responsable' %}">Voir les Matériels par Responsable</a></li>
+        <li><a href="{% url 'historique_materiel' %}">Voir l'Historique des Matériels</a></li>
+    </ul>
+
+    <h2>Listes détaillées</h2>
+    <ul>
+        {% for enseignant in enseignants %}
+            <li><a href="{% url 'materiels_par_responsable' enseignant.id %}">Matériels sous la responsabilité de {{ enseignant.prenom }} {{ enseignant.nom }}</a></li>
+        {% endfor %}
+        {% for salle in salles %}
+            <li><a href="{% url 'materiels_par_salle' salle.id %}">Matériels dans la salle {{ salle.numero }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

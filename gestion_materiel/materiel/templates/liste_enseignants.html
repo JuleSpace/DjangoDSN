@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Enseignants</title>
+</head>
+<body>
+    <h1>Liste des Enseignants avec du Matériel</h1>
+    <ul>
+        {% for enseignant in enseignants %}
+        <li>
+            <a href="{% url 'materiels_par_responsable' enseignant.id %}">{{ enseignant.prenom }} {{ enseignant.nom }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

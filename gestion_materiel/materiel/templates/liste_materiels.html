@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liste des Matériels</title>
+</head>
+<body>
+    <h1>Liste des Matériels</h1>
+    <ul>
+        {% for materiel in materiels %}
+        <li>
+            {{ materiel.nom }} ({{ materiel.type }})
+            <a href="{% url 'historique_materiel_detail' materiel_id=materiel.id %}">Voir l'historique</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

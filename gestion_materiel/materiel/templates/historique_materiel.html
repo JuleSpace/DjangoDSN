@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Historique de {{ materiel.nom }}</title>
+</head>
+<body>
+    <h1>Historique de {{ materiel.nom }}</h1>
+    <ul>
+        {% for entry in historique %}
+        <li>{{ entry.date }} : {{ entry.ancien_possesseur.prenom }} {{ entry.ancien_possesseur.nom }} a passé à {{ entry.nouveau_possesseur.prenom }} {{ entry.nouveau_possesseur.nom }} à {{ entry.lieu.numero }} pour {{ entry.occasion }} ({{ entry.etat_accessoires }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

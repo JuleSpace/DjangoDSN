@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matériels dans la salle {{ salle.numero }}</title>
+</head>
+<body>
+    <h1>Matériels dans la salle {{ salle.numero }}</h1>
+    <ul>
+
+    <h2>Liste des Matériels</h2>
+    <ul>
+        {% for materiel in materiels %}
+        <li>
+            {{ materiel.nom }} ({{ materiel.type }}) 
+            <a href="{% url 'changer_possesseur' materiel_id=materiel.id %}">Changer le possesseur</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </ul>
+</body>
+</html>

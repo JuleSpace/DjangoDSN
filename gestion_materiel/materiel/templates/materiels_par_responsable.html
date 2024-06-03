@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matériels sous la responsabilité de {{ enseignant.prenom }} {{ enseignant.nom }}</title>
+</head>
+<body>
+    <h1>Matériels sous la responsabilité de {{ enseignant.prenom }} {{ enseignant.nom }}</h1>
+    <ul>
+        {% for materiel in materiels %}
+        <li>
+            {{ materiel.nom }} ({{ materiel.type }}) 
+            <a href="{% url 'changer_possesseur' materiel_id=materiel.id %}">Changer le possesseur</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
